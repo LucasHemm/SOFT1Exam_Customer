@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService", "CustomerService.csproj", "{93869A3B-CCF5-4DA8-A21E-3336223830A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService", "CustomerService\CustomerService.csproj", "{C9DB2F88-20FC-4635-894E-33C78D28B352}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBAE7D05-81B6-4845-A6A4-EF355050D0BA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAA8F870-9AB8-4F77-90BD-65E1140B9549}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerServiceTest", "CustomerServiceTest\CustomerServiceTest.csproj", "{E970DF80-7EF3-4D8D-B21E-B32126226C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{93869A3B-CCF5-4DA8-A21E-3336223830A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93869A3B-CCF5-4DA8-A21E-3336223830A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93869A3B-CCF5-4DA8-A21E-3336223830A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93869A3B-CCF5-4DA8-A21E-3336223830A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9DB2F88-20FC-4635-894E-33C78D28B352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DB2F88-20FC-4635-894E-33C78D28B352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DB2F88-20FC-4635-894E-33C78D28B352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DB2F88-20FC-4635-894E-33C78D28B352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E970DF80-7EF3-4D8D-B21E-B32126226C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E970DF80-7EF3-4D8D-B21E-B32126226C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E970DF80-7EF3-4D8D-B21E-B32126226C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E970DF80-7EF3-4D8D-B21E-B32126226C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

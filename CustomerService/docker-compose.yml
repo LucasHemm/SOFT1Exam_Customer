@@ -3,4 +3,4 @@
     image: customerservice
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: CustomerService/Dockerfile
