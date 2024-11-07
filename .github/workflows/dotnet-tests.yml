@@ -25,4 +25,4 @@ jobs:
         run: dotnet build CustomerService/CustomerService.sln --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test CustomerService/CustomerService.sln.sln --no-build --configuration Release --verbosity normal
+        run: dotnet test CustomerService/CustomerService.sln --no-build --configuration Release --verbosity normal
