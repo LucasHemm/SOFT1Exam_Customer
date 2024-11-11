@@ -17,12 +17,39 @@ public class CustomerApi : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult CreateRestaurant([FromBody] CustomerDTO customerDto)
+    public IActionResult CreateCustomer([FromBody] CustomerDTO customerDto)
     {
         try
         {
             _customerFacade.CreateCustomer(customerDto);
             return Ok("Customer created successfully");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    [HttpPut]
+    public IActionResult UpdateCustomer([FromBody] CustomerDTO customerDto)
+    {
+        try
+        {
+            _customerFacade.UpdateCustomer(customerDto);
+            return Ok("Customer updated successfully");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpGet]
+    public IActionResult GetAllCustomers()
+    {
+        try
+        {
+            var customers = _customerFacade.GetAllCustomers();
+            return Ok(customers);
         }
         catch (Exception ex)
         {
