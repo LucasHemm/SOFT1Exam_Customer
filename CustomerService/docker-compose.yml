@@ -1,6 +1,0 @@
-﻿services:
-  customerservice:
-    image: customerservice
-    build:
-      context: .
-      dockerfile: CustomerService/Dockerfile
