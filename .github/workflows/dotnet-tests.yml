@@ -36,6 +36,7 @@ jobs:
 
       - name: Build Docker image
         if: success()
+        working-directory: CustomerService/CustomerService
         run: |
           docker build -t lucashemcph/soft1exam_customerservice:latest .
 
