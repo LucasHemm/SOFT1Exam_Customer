@@ -28,13 +28,14 @@ public class CustomerApi : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    //Update customer
     [HttpPut]
     public IActionResult UpdateCustomer([FromBody] CustomerDTO customerDto)
     {
         try
         {
-            _customerFacade.UpdateCustomer(customerDto);
-            return Ok("Customer updated successfully");
+            return Ok(new CustomerDTO(_customerFacade.UpdateCustomer(customerDto)));
         }
         catch (Exception ex)
         {
