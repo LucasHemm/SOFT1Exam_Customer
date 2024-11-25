@@ -55,5 +55,19 @@ public class CustomerApi : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    // GET: api/Customer
+    [HttpGet("{id}")]
+    public IActionResult GetCustomer(int id)
+    {
+        try
+        {
+            return Ok(new CustomerDTO(_customerFacade.GetCustomer(id)));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 
 }
