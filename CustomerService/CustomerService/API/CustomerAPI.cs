@@ -21,8 +21,7 @@ public class CustomerApi : ControllerBase
     {
         try
         {
-            _customerFacade.CreateCustomer(customerDto);
-            return Ok("Customer created successfully");
+            return Ok(new CustomerDTO(_customerFacade.CreateCustomer(customerDto)));
         }
         catch (Exception ex)
         {
