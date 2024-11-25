@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using CustomerService;
@@ -98,9 +99,10 @@ namespace CustomerServiceTest
 
             // Assert
             response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            Assert.Equal("Customer created successfully", responseString);
-
+            var responseString = await response.Content.ReadFromJsonAsync(typeof(CustomerDTO));
+            Assert.Equal(customerDto.Email, ((CustomerDTO)responseString).Email);
+            
+            
             // Verify the customer is in the database
             using (var scope = _factory.Services.CreateScope())
             {
