@@ -71,19 +71,4 @@ public class CustomerApi : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
-    public IActionResult GetCustomer(int id)
-    {
-        Console.WriteLine("GetCustomer");
-        try
-        {
-            var customer = _customerFacade.GetCustomer(id);
-            return Ok(new CustomerDTO(customer));
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex);
-            return BadRequest(ex.Message);
-        }
-    }
 }
