@@ -24,14 +24,18 @@ public class CustomerFacade
     
     public Customer GetCustomer(int id)
     {
+        Console.WriteLine(id+"#######################");
         Customer customer = _context.Customers
             .Include(customer => customer.Address)
             .Include(customer => customer.PaymentInfo)
             .FirstOrDefault(customer => customer.Id == id);
         if (customer == null)
         {
+            Console.WriteLine("#######################NOT FOUND");
             throw new Exception("customer not found");
         }
+
+        Console.WriteLine(customer.Address.City + "#######################");
         return customer;
     }
     
@@ -64,6 +68,7 @@ public class CustomerFacade
             .Include(customer => customer.PaymentInfo).ToList();
     }
     
+  
     
     
     
