@@ -159,9 +159,9 @@ namespace CustomerServiceTest
 
             // Assert
             updateResponse.EnsureSuccessStatusCode();
-            var updateResponseContent = await updateResponse.Content.ReadAsStringAsync();
-            Assert.Equal("Customer updated successfully", updateResponseContent);
-
+            var updateResponseContent = await updateResponse.Content.ReadAsStringAsync(); 
+            Assert.Equal(updatedCustomerDto.Email, JsonConvert.DeserializeObject<CustomerDTO>(updateResponseContent).Email);
+            
             // Verify the customer was updated in the database
             using (var scope = _factory.Services.CreateScope())
             {

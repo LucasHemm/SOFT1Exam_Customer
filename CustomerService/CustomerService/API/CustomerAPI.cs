@@ -28,13 +28,14 @@ public class CustomerApi : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    //Update customer
     [HttpPut]
     public IActionResult UpdateCustomer([FromBody] CustomerDTO customerDto)
     {
         try
         {
-            _customerFacade.UpdateCustomer(customerDto);
-            return Ok("Customer updated successfully");
+            return Ok(new CustomerDTO(_customerFacade.UpdateCustomer(customerDto)));
         }
         catch (Exception ex)
         {
@@ -49,6 +50,20 @@ public class CustomerApi : ControllerBase
         {
             var customers = _customerFacade.GetAllCustomers();
             return Ok(customers);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    
+    // GET: api/Customer
+    [HttpGet("{id}")]
+    public IActionResult GetCustomer(int id)
+    {
+        try
+        {
+            return Ok(new CustomerDTO(_customerFacade.GetCustomer(id)));
         }
         catch (Exception ex)
         {
